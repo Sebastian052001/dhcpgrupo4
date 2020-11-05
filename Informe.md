@@ -6,7 +6,7 @@ https://github.com/KatharaFramework/Docker-Images
 Con el protocolo dhcp instalado procedimos a crear la infra estructura del laboratorio siguiendo la topologia dada
 Para esto, creamos las carpetas que corresponderan a cada elemento del laboratorio con el comando
 
-mkdir pc1 pc2 pc3 pc4 r1 sv1
+mkdir pc1 pc2 pc3 pc4 r1 server
 
 con el comando touch crearemos sus .startups y el archivo lab.conf en donde configuraremos las conexiones de cada pc
 
@@ -30,3 +30,9 @@ INTERFACESv6=""
 estos causan que cuando se inicie el protocolo dhcp dentro del laboratorio, enlaze las interfaces ipv4 a los puertos eth0
 
 Tambien configuramos el archivo dhcp.conf dentro del directorio /r1/etc/dhcp/dhcpd.conf, en este configuraremos los rangos de las ips que otorga el protocolo al laboratorio
+
+Luego configuraremos la ip del servidor dentro de su startup, una ruta por determinado e iniciaremos el protocolo apache
+
+Finalmente dentro del directorio server/var/www/html/ crearemos una pequeña pagina html para comprobar el funcionamiento del protocolo dhcp
+
+
